@@ -1,4 +1,3 @@
-import { SpherusModal } from "@/src/SpherusModal";
 import { spherusData } from "@/public/spherus/spherusData";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -63,10 +62,12 @@ export default function Home() {
       >
         {spherusData.map((spherus) => (
           <motion.div
+            key={spherus.word}
             variants={variants}
             className="w-min flex flex-row items-start justify-evenly gap-12 h-[20rem]"
           >
             <img
+              alt={spherus.word}
               src={`/spherus/${spherus.word}.jpg`}
               className="relative min-w-[20rem] rounded-md cursor-pointer transition-all duration-150 hover:brightness-75"
               onClick={() => setCurrentModal(spherus.word)}
@@ -112,6 +113,7 @@ export default function Home() {
             />
             {currentModal && (
               <img
+                alt={currentModal}
                 className="relative h-[80vh] w-auto rounded-md"
                 src={`/spherus/${currentModal}.jpg`}
               />

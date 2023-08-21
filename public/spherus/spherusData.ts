@@ -31,7 +31,7 @@ export const spherusData = [
   },
   {
     word: "consitrae",
-    meta: "con·sit·rae (noun)",
+    meta: "con·si·trae (noun)",
     desc: "to be uncertain of the future, stuck exploring every possible outcome, so much so that you become blind to what's right in front of you.",
   },
   {

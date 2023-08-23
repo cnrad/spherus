@@ -7,7 +7,11 @@ const variants = {
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75, ease: "easeOut", staggerChildren: 0.1 },
+    transition: {
+      duration: 1,
+      ease: [0, 0.5, 0.5, 1],
+      staggerChildren: 0.1,
+    },
   },
 };
 
@@ -25,7 +29,14 @@ export default function Home() {
   });
 
   return (
-    <main className="h-auto flex flex-col items-center bg-gradient-to-b from-[#0e111a] via-[#080808] to-[#080808]">
+    <main className="h-auto flex flex-col items-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="w-full min-h-[30rem] lg:min-h-[40rem] bg-gradient-to-b from-[#0e111a] to-[#080808] absolute -z-10"
+      />
+
       <motion.div
         initial={"initial"}
         animate={"animate"}
@@ -82,7 +93,7 @@ export default function Home() {
               <p className="text-xl text-zinc-300 font-light">{spherus.desc}</p>
 
               <a
-                href={`https://cnrad.darkroom.com/`}
+                href={`https://cnrad.darkroom.com/products/spherus/${spherus.id}`}
                 rel="noreferrer noopener"
                 className="mt-4 md:mt-auto text-center px-3 py-2 bg-zinc-900 text-zinc-400 rounded-md hover:bg-zinc-800 border border-zinc-900 hover:border-zinc-700 hover:text-white transition-colors duration-150"
               >
@@ -93,7 +104,7 @@ export default function Home() {
         ))}
       </motion.div>
 
-      <footer className="py-4 text-sm text-zinc-500 w-full text-center">
+      <footer className="py-4 text-sm text-zinc-500 w-full text-center px-4">
         All works © Conrad Crawford 2023. Please do not reproduce without the
         expressed written consent of Conrad Crawford
       </footer>

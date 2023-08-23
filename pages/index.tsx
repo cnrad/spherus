@@ -25,7 +25,7 @@ export default function Home() {
   });
 
   return (
-    <main className="max-h-screen min-h-screen flex flex-col items-center overflow-y-scroll">
+    <main className="h-auto flex flex-col items-center bg-gradient-to-b from-[#0e111a] via-[#080808] to-[#080808]">
       <motion.div
         initial={"initial"}
         animate={"animate"}

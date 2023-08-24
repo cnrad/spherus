@@ -127,11 +127,22 @@ export default function Home() {
               onClick={() => setCurrentModal(null)}
             />
             {currentModal && (
-              <img
-                alt={currentModal}
-                className="relative w-[80vw] h-auto md:max-w-[50rem] md:w-auto md:min-h-[50rem] rounded-md"
-                src={`/spherus/${currentModal}.jpg`}
-              />
+              <div className="flex flex-col gap-4 items-center">
+                <img
+                  alt={currentModal}
+                  className="relative w-[80vw] h-auto md:max-w-[50rem] md:w-auto md:min-h-[50rem] rounded-md"
+                  src={`/spherus/${currentModal}.jpg`}
+                />
+                <a
+                  className="relative text-zinc-600 flex flex-row gap-1 items-center cursor-pointer transition-colors duration-150 hover:text-zinc-400"
+                  href={`/spherus4k/${
+                    currentModal.charAt(0).toUpperCase() + currentModal.slice(1)
+                  }.png`}
+                  target="_blank"
+                >
+                  Full Quality ↗
+                </a>
+              </div>
             )}
           </motion.div>
         )}

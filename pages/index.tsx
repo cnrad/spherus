@@ -1,6 +1,7 @@
 import { spherusData } from "@/public/spherus/spherusData";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const variants = {
   initial: { opacity: 0, y: 40 },
@@ -77,11 +78,14 @@ export default function Home() {
             variants={variants}
             className="w-min h-auto flex flex-col items-center md:flex-row md:items-start justify-evenly md:gap-12 md:h-[20rem]"
           >
-            <img
+            <Image
               alt={spherus.word}
               src={`/spherus/${spherus.word}.jpg`}
               className="relative min-w-[20rem] rounded-md cursor-pointer transition-all duration-150 hover:brightness-75"
               onClick={() => setCurrentModal(spherus.word)}
+              width={320}
+              height={320}
+              quality={100}
             />
             <div className="flex mt-8 md:mt-0 flex-col min-w-[80vw] md:min-w-[25rem] h-full">
               <h1 className="text-[3rem] leading-none font-semibold capitalize mb-2">

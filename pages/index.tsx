@@ -109,7 +109,7 @@ export default function Home() {
       </motion.div>
 
       <footer className="py-4 text-sm text-zinc-500 w-full text-center px-4">
-        All works © Conrad Crawford 2023. Please do not reproduce without the
+        All works © Conrad Crawford {new Date().getFullYear()}. Please do not reproduce without the
         expressed written consent of Conrad Crawford
       </footer>
 
